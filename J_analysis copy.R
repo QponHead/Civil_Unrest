@@ -144,6 +144,7 @@ pdf("/Users/angelokelvakis/Desktop/Jones_variableGraphs.pdf", width = 3.25, heig
     }
     par(new = F, lwd = .25)
     hist(Foodvar, main = "", ylab = "", xlab = "", xlim = c(min(Foodvar), max(Foodvar)), axes = F, col = "grey")
+    axis(4)
     par(new = T, lwd = 1)
     curve(Logit(VarSum.median + TargetCof*x), min(Foodvar), max(Foodvar), ylim=c(0,1),main = paste(TargetSummary, "\n Coef:",format(round(TargetCof, 3),nsmall = 2),"  p<0.05:", TargetSig), ylab = "Food Insecurity Probability" )
     par(new = TRUE)
@@ -192,6 +193,7 @@ for(i in c(1:length(StateVul.Coef))){
   }
   par(new = F, lwd = .25)
   hist(Statevar, main = "", ylab = "", xlab = "", xlim = c(min(Statevar), max(Statevar)), axes = F, col = "grey")
+  axis(4)
   par(new = T, lwd = 1)
   curve(Logit(VarSum.median + TargetCof*x), min(Statevar), max(Statevar), ylim=c(0,1),main = paste(TargetSummary, "\n Coef:",format(round(TargetCof, 3),nsmall = 2),"  p<0.05:", TargetSig), ylab = "State Vulnerability Probability" )
   par(new = TRUE)
